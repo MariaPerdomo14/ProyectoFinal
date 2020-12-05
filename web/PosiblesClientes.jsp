@@ -26,11 +26,14 @@
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- Core plugin JavaScript-->
         <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        
+        <link href="css/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <script src="js/sweetalert.min.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="container">
             <div class="card mx-auto mt-5">
-                <div class="card-header">Crear Posibles Cliente</div>
+                <div class="card-header">Crear Posibles Clientes</div>
                 <div class="card-body">
                     <form action="PosiblesClientesController" method="POST">
                         <!-- FILA -->
@@ -57,22 +60,22 @@
                                 <!-- COLUMNA -->
                                 <div class="col-md-3">
                                     <label name="lblEmpresa">Empresa</label>
-                                    <input type="text" placeholder="Empresa" name="txtNombre" class="form-control"/>  
+                                    <input type="txt" placeholder="Empresa" name="txtNombre" class="form-control" required=""/>  
                                 </div>
                                 <!-- COLUMNA -->
                                 <div class="col-md-3">
                                     <label name="lblNombre">Nombre</label>
-                                    <input type="text" placeholder="Nombre" name="txtEmpresa" class="form-control"/>
+                                    <input type="txt" placeholder="Nombre" name="txtEmpresa" class="form-control" required=""/>
                                 </div>
                                 <!-- COLUMNA -->
                                 <div class="col-md-3">
                                     <label name="lblApellido">Apellidos</label>
-                                    <input type="text" placeholder="Apellido" name="txtApellidos" class="form-control"/>
+                                    <input type="txt" placeholder="Apellido" name="txtApellidos" class="form-control" required=""/>
                                 </div>
                                 <!-- COLUMNA -->
                                 <div class="col-md-3">
                                     <label name="lblTitulo">Titulo</label>
-                                    <input type="text" placeholder="Titulo" name="txtTitulo" class="form-control"/>
+                                    <input type="txt" placeholder="Titulo" name="txtTitulo" class="form-control"/>
                                 </div>
                             </div>
                         </div>
@@ -82,22 +85,22 @@
                                 <!-- COLUMNA -->
                                 <div class="col-md-3">
                                     <label name="lblCorreoElectronico">Correo electronico</label>
-                                    <input type="email" placeholder="Correo electronico" name="txtCorreoElectronico" class="form-control"/>
+                                    <input type="email" placeholder="Correo electronico" name="txtCorreoElectronico" class="form-control" required=""/>
                                 </div>
                                 <!-- COLUMNA -->
                                 <div class="col-md-3">
                                     <label name="lblTelefono">Telefono</label>
-                                    <input type="text" placeholder="Telefono" name="txtTelefono" class="form-control"/>
+                                    <input type="txt" placeholder="Telefono" name="txtTelefono" class="form-control"/>
                                 </div>
                                 <!-- COLUMNA -->
                                 <div class="col-md-3">
                                     <label name="lblFax">Fax</label>
-                                    <input type="text" placeholder="Ingrese fax" name="txtFax" class="form-control"/> 
+                                    <input type="txt" placeholder="Ingrese fax" name="txtFax" class="form-control"/> 
                                 </div>
                                 <!-- COLUMNA -->
                                 <div class="col-md-3">
                                     <label name="lblMovil">Movil</label>
-                                    <input type="text" placeholder="Movil" name="txtMovil" class="form-control"/>    
+                                    <input type="txt" placeholder="Movil" name="txtMovil" class="form-control"/>    
                                 </div>
                             </div>
                         </div>
@@ -106,12 +109,12 @@
                             <div class="form-row">
                                 <div class="col-md-3">
                                     <label name="lblSitioWeb">Sitio web</label>
-                                    <input type="text" placeholder="sitio web" name="txtWeb" class="form-control"/>
+                                    <input type="txt" placeholder="sitio web" name="txtWeb" class="form-control"/>
                                 </div>
                                 <div class="col-md-3">
                                     <label name="lblFuentePosibleCliente">Fuente de posible cliente</label>
                                     <select  class="form-control" name="ddlFuentePosibleCliente">
-                                        <option value="1">None</option>
+                                        <option value="1">Ninguno</option>
                                         <option value="2">Aviso</option>
                                         <option value="3">Llamada no solicitada</option>
                                         <option value="4">Recomendacion de empleado</option>
@@ -122,7 +125,7 @@
                                 <div class="col-md-3">
                                     <label name="lblEstadoPosibleCliente">Estado de posible cliente</label>
                                     <select  class="form-control" name="ddlEstadoPosibleCliente">
-                                        <option value="1" >None</option>
+                                        <option value="1" >Ninguno</option>
                                         <option value="2">Intento de contacto</option>
                                         <option value="3">Contactar en el futuro</option>
                                         <option value="4">Contactado</option>
@@ -131,9 +134,9 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3">
-                                    <label name="lbSector">Sector</label>
+                                    <label name="lblSector">Sector</label>
                                     <select  class="form-control" name="ddlSector">
-                                        <option value="1" >None</option>
+                                        <option value="1" >Ninguno</option>
                                         <option value="2">Aps(provedor de servicios de aplicaciones)</option>
                                         <option value="3">OEM de datos</option>
                                         <option value="4">ERP(Planificacion de recursos de empresa</option>
@@ -154,9 +157,9 @@
                                     <input type="number" placeholder="Ingresos anuales" name="txtIngresosanuales" class="form-control"/>
                                 </div>
                                 <div class="col-md-3">
-                                    <label name="lbCalificacion"name="ddlCalificacion">Calificacion</label>
+                                    <label name="lblCalificacion"name="ddlCalificacion">Calificacion</label>
                                     <select  class="form-control" name="ddlCalificacion">
-                                        <option value="1" >None</option>
+                                        <option value="1" >Ninguna</option>
                                         <option value="2">Abquirido</option>
                                         <option value="3">Activo</option>
                                         <option value="4">Contactado</option>
@@ -165,7 +168,7 @@
                                     </select>      
                                 </div>
                                 <div class="col-md-3">
-                                    <label name="lbNoParticipacionCorreoElectronico">                         
+                                    <label name="lblNoParticipacionCorreoElectronico">                         
                                         <input type="checkbox"  name="chkNoParticipacionCorreoElectronico"/>
                                         No participacion correo electronico
                                     </label> 
@@ -176,14 +179,14 @@
                             <div class="form-row">
                                 <div class="col-md-3">
                                     <label name="lblIdskype">ID Skype</label>
-                                    <input type="text" placeholder="ID de skype" name="txtIDSkype" class="form-control"/>
+                                    <input type="txt" placeholder="ID de skype" name="txtIDSkype" class="form-control"/>
                                 </div>
                                 <div class="col-md-3">
                                     <label name="lblTwitter">Twitter</label>
-                                    <input type="text" placeholder="Twitter" name="txtTwitter" class="form-control"/>
+                                    <input type="txt" placeholder="Twitter" name="txtTwitter" class="form-control"/>
                                 </div>
                                 <div class="col-md-6">
-                                    <label name="Correo electronico">Correo electronico secundario</label>
+                                    <label name="lblCorreo electronico">Correo electronico secundario</label>
                                     <input type="email" placeholder="Correo electronico secundario" name="txtCorreoelectronicosecundario" class="form-control"/>
                                 </div>
                             </div>

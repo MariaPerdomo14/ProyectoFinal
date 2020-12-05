@@ -27,11 +27,8 @@
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <link href="css/sweetalert.css"rel="stylesheet"type="text/css"/>
-        <script src="js/sweetalert.min.js"type="text/javascript"/>
+        <script src="js/sweetalert.min.js"type="text/javascript"></script>
 
-        <script>
-        
-        </script>
     </head>
     <body class="bg-dark">
         <!-- SCRIPTLETS-->
@@ -39,27 +36,23 @@
             if (request.getAttribute("stError") != null) {
 
         %>
-        <input type="text"  hidden=""  id="txtMensaje" value = "<%= request.getAttribute("stError").toString()%>"
+        <input type="text"  hidden=""  id="txtMensaje" value = "<%= request.getAttribute("stError").toString()%>"/>
         <script>   
-
-            var stMensaje = document.getElementById("txtMensaje").value >
-                    swal("Mensaje", document.getElementById("txtMensaje").value, "error"")>
+            swal("Mensaje", document.getElementById("txtMensaje").value, "error")
         </script>
         <%
             }
         %>
-
         <div class="container">
             <div class="card card-login mx-auto mt-5">
                 <div class="card-header">Login</div>
                 <div class="card-body">
-                    <form action="LoginControllers" method="POST">
+                    <form action="LoginController" method="post">
                         <div class="form-group">
                             <label for="lblEmail">Email</label>
                             <input class="form-control" name="txtEmail" type="email" aria-describedby="emailHelp" placeholder="Ingrese email">
-                        </div>                        
-
-
+                        </div> 
+                       <div>
                         <div class="form-group">
                             <label for="lblPasword">Password</label>
                             <input class="form-control" name="txtPassword" type="password" placeholder="Password">
@@ -71,7 +64,7 @@
                             </div>
                         </div>
                         <input name="btnAceptar"type="submit" class="btn btn-primary btn-block "value="Aceptar">                            
-                    </form>
+                      </form>
                     <div class="text-center">
                         <a class="d-block small mt-3" href="Registrar.jsp">Registrar cuenta</a>
 

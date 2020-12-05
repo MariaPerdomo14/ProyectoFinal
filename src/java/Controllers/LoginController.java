@@ -35,10 +35,10 @@ public class LoginController extends HttpServlet {
             
             String stMensaje = "";            
             
-            if (request.getParameter("textEmail").equals("")) {
+            if (request.getParameter("txtEmail").equals("")) {
                 stMensaje += "Ingrese email,";
             }
-            if (request.getParameter("textPassword").equals("")) {
+            if (request.getParameter("txtPassword").equals("")) {
                 stMensaje += "Ingrese password,";
             }
             
@@ -50,8 +50,8 @@ public class LoginController extends HttpServlet {
             Models.clsLogin obclsLogin = new Models.clsLogin();
             
             //asignado las propiedades
-            obclsLogin.setStEmail(request.getParameter("textEmail").toString());
-            obclsLogin.setStPassword(request.getParameter("textPassword").toString());
+            obclsLogin.setStEmail(request.getParameter("txtEmail").toString());
+            obclsLogin.setStPassword(request.getParameter("txtPassword").toString());
             
             //Instanciado controlador
             BL.clsLogin obBLclsLogin = new BL.clsLogin();

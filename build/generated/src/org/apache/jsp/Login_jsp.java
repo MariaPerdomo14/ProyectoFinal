@@ -66,11 +66,8 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <script src=\"vendor/bootstrap/js/bootstrap.bundle.min.js\"></script>\n");
       out.write("\n");
       out.write("        <link href=\"css/sweetalert.css\"rel=\"stylesheet\"type=\"text/css\"/>\n");
-      out.write("        <script src=\"js/sweetalert.min.js\"type=\"text/javascript\"/>\n");
+      out.write("        <script src=\"js/sweetalert.min.js\"type=\"text/javascript\"></script>\n");
       out.write("\n");
-      out.write("        <script>\n");
-      out.write("        \n");
-      out.write("        </script>\n");
       out.write("    </head>\n");
       out.write("    <body class=\"bg-dark\">\n");
       out.write("        <!-- SCRIPTLETS-->\n");
@@ -84,27 +81,23 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.print( request.getAttribute("stError").toString());
       out.write("\"\n");
       out.write("        <script>   \n");
-      out.write("\n");
-      out.write("            var stMensaje = document.getElementById(\"txtMensaje\").value >\n");
-      out.write("                    swal(\"Mensaje\", document.getElementById(\"txtMensaje\").value, \"error\"\")>\n");
+      out.write("            swal(\"Mensaje\", document.getElementById(\"txtMensaje\").value, \"error\")>\n");
       out.write("        </script>\n");
       out.write("        ");
 
             }
         
       out.write("\n");
-      out.write("\n");
       out.write("        <div class=\"container\">\n");
       out.write("            <div class=\"card card-login mx-auto mt-5\">\n");
       out.write("                <div class=\"card-header\">Login</div>\n");
       out.write("                <div class=\"card-body\">\n");
-      out.write("                    <form action=\"LoginControllers\" method=\"POST\">\n");
+      out.write("                    <form action=\"LoginController\" method=\"post\">\n");
       out.write("                        <div class=\"form-group\">\n");
       out.write("                            <label for=\"lblEmail\">Email</label>\n");
       out.write("                            <input class=\"form-control\" name=\"txtEmail\" type=\"email\" aria-describedby=\"emailHelp\" placeholder=\"Ingrese email\">\n");
-      out.write("                        </div>                        \n");
-      out.write("\n");
-      out.write("\n");
+      out.write("                        </div> \n");
+      out.write("                       <div>\n");
       out.write("                        <div class=\"form-group\">\n");
       out.write("                            <label for=\"lblPasword\">Password</label>\n");
       out.write("                            <input class=\"form-control\" name=\"txtPassword\" type=\"password\" placeholder=\"Password\">\n");
@@ -116,7 +109,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            </div>\n");
       out.write("                        </div>\n");
       out.write("                        <input name=\"btnAceptar\"type=\"submit\" class=\"btn btn-primary btn-block \"value=\"Aceptar\">                            \n");
-      out.write("                    </form>\n");
+      out.write("                      </form>\n");
       out.write("                    <div class=\"text-center\">\n");
       out.write("                        <a class=\"d-block small mt-3\" href=\"Registrar.jsp\">Registrar cuenta</a>\n");
       out.write("\n");

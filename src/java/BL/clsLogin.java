@@ -10,17 +10,20 @@ package BL;
  * @author Maria Angelica
  */
 public class clsLogin {
-    public boolean validarLogin(Models.clsLogin obclsLogin){
-        try{
-            
-            return obclsLogin.getStEmail().equals("mariajhon04@gmail.com")&&
-                    obclsLogin.getStPassword().equals("14321");
-            
-        }catch(Exception ex){
+
+    public boolean validarLogin(Models.clsLogin obclsLogin) {
+        try {
+
+            if (obclsLogin.getStEmail().equals("mariajhon04@gmail.com")
+                    && obclsLogin.getStPassword().equals("134567")) {
+                return true;
+            }
+                return false;
+        } catch (Exception ex) {
             throw ex;
-            
+
         }
-        
-    }   
-   
+
+    }
+
 }
