@@ -131,7 +131,7 @@ public class clsPosiblesClientes {
         this.obclsCalificacion = obclsCalificacion;
     }
 
-    public char isChNoParticipacionCorreoEletronico() {
+    public char getChNoParticipacionCorreoEletronico() {
         return chNoParticipacionCorreoEletronico;
     }
 
@@ -162,8 +162,17 @@ public class clsPosiblesClientes {
     public void setStCorreoElecronicoSecundario(String stCorreoElecronicoSecundario) {
         this.stCorreoElecronicoSecundario = stCorreoElecronicoSecundario;
     }
+
+    public int getInCodigo() {
+        return inCodigo;
+    }
+
+    public void setInCodigo(int inCodigo) {
+        this.inCodigo = inCodigo;
+    }
     
     //ATRIBUTOS O PROPIEDADES
+    public int inCodigo;
     public String stEmpresa;
     public String stNombre;
     public String stApellidos;

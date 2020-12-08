@@ -44,9 +44,19 @@ public class PosiblesClientesController extends HttpServlet {
 
         }
     }
+    
+    public void cargarModificar(HttpServletRequest request,
+            HttpServletResponse response) throws IOException, ServletException{
+           try{
+               
+           
+        }catch(Exception ex){
+               
+        }
+    }
 
     public void btnGuardar(HttpServletRequest request,
-            HttpServletResponse response, List<clsPosiblesClientes> lstclsPosiblesClientes) throws ServletException, IOException {
+            HttpServletResponse response) throws ServletException, IOException {
         try {
 
             //DEFINICION DE MODELOS
@@ -61,30 +71,29 @@ public class PosiblesClientesController extends HttpServlet {
                 obclsPosiblesClientes.setStEmpresa(request.getParameter("txtEmpresa"));
             }
             if (request.getParameter("txtNombre") != null) {
-                obclsPosiblesClientes.setStEmpresa(request.getParameter("txtNombre"));
+                obclsPosiblesClientes.setStNombre(request.getParameter("txtNombre"));
             }
             if (request.getParameter("txtApellidos") != null) {
-                obclsPosiblesClientes.setStEmpresa(request.getParameter("txtApellidos"));
+                obclsPosiblesClientes.setStApellidos(request.getParameter("txtApellidos"));
             }
             if (request.getParameter("txtTitulo") != null) {
-                obclsPosiblesClientes.setStEmpresa(request.getParameter("txtTitulo"));
+                obclsPosiblesClientes.setStTitulo(request.getParameter("txtTitulo"));
             }
-            if (request.getParameter("txtCorreoElecronico") != null) {
-                obclsPosiblesClientes.setStEmpresa(request.getParameter("txtCorreoElecronico"));
+            if (request.getParameter("txtCorreoElectronico") != null) {
+                obclsPosiblesClientes.setStCorreoElecronico(request.getParameter("txtCorreoElectronico"));
             }
             if (request.getParameter("txtTelefono") != null) {
-                obclsPosiblesClientes.setStEmpresa(request.getParameter("txtTelefono"));
+                obclsPosiblesClientes.setStTelefono(request.getParameter("txtTelefono"));
+            }    
+            if (request.getParameter("txtFax") != null) {
+                obclsPosiblesClientes.setStFax(request.getParameter("txtFax"));
             }
             if (request.getParameter("txtMovil") != null) {
-                obclsPosiblesClientes.setStEmpresa(request.getParameter("txtMovil"));
+                obclsPosiblesClientes.setStMovil(request.getParameter("txtMovil"));
             }
-            if (request.getParameter("txtweb") != null) {
-                obclsPosiblesClientes.setStEmpresa(request.getParameter("txtweb"));
+            if (request.getParameter("txtWeb") != null) {
+                obclsPosiblesClientes.setStSitioWeb(request.getParameter("txtWeb"));
             }
-            if (request.getParameter("txtweb") != null) {
-                obclsPosiblesClientes.setStEmpresa(request.getParameter("txtweb"));
-            }
-
             if (request.getParameter("ddlFuentePosibleCliente") != null) {
                 //MODELO HIJO
                 obclsFuentePosibleCliente.setInCodigo(Integer.parseInt(request.getParameter("ddlFuentePosibleCliente")));
@@ -165,8 +174,8 @@ public class PosiblesClientesController extends HttpServlet {
             if (request.getParameter("txtCantidadEmpleados") != null) {
                 obclsPosiblesClientes.setInCantidadEmpleados(Integer.parseInt(request.getParameter("txtCantidadEmpleados")));
             }
-            if (request.getParameter("textIngresosAnuales") != null) {
-                obclsPosiblesClientes.setDbIngresosAnuales(Double.parseDouble(request.getParameter("textIngresosAnuales")));
+            if (request.getParameter("txtIngresosAnuales") != null) {
+                obclsPosiblesClientes.setDbIngresosAnuales(Double.parseDouble(request.getParameter("txtIngresosAnuales")));
             }
 
             if (request.getParameter("ddlCalificacion") != null) {
@@ -193,7 +202,7 @@ public class PosiblesClientesController extends HttpServlet {
 
                 //ASIGNO AL MODELO PADRE
                 obclsPosiblesClientes.setObclsCalificacion(obclsCalificacion);
-            }
+            }                        
             if (request.getParameter("chkNoParticipacionCorreoElectronico") != null) {
 
                 char chSeleccion = request.getParameter("chkNoParticipacionCorreoElectronico").equals("on")
@@ -201,8 +210,8 @@ public class PosiblesClientesController extends HttpServlet {
 
                 obclsPosiblesClientes.setChNoParticipacionCorreoEletronico(chSeleccion);
             }
-            if (request.getParameter("txtIDskype") != null) {
-                obclsPosiblesClientes.setStIDSkype(request.getParameter("txtIDskype"));
+            if (request.getParameter("txtIDSkype") != null) {
+                obclsPosiblesClientes.setStIDSkype(request.getParameter("txtIDSkype"));
             }
             if (request.getParameter("txtTwitter") != null) {
                 obclsPosiblesClientes.setStTwitter(request.getParameter("txtTwitter"));
@@ -214,15 +223,23 @@ public class PosiblesClientesController extends HttpServlet {
             HttpSession session = request.getSession(true);
 
             //LISTA DE OBJETOS
-            List<Models.clsPosiblesClientes> lsclsPosiblesClientes = new ArrayList<Models.clsPosiblesClientes>();
+            List<Models.clsPosiblesClientes> lstclsPosiblesClientes = 
+                    new ArrayList<Models.clsPosiblesClientes>();
             
             //VALIDAMOS PREVIA EXISTENCIA DE LA VARIABLE DE SESSION
             if (session.getAttribute("session_lstclsPosiblesClientes") != null){
                 lstclsPosiblesClientes = (List<Models.clsPosiblesClientes>)
-                       session.getAttribute("session lstclsPosiblesClientes");
+                       session.getAttribute("session_lstclsPosiblesClientes");
             }
             
-            int inCodigo = lstclsPosiblesClientes.size();
+            //PARA CALCULO AUTOMATICO DEL CODIGO QUE IDENTIFICA ESE REGISTRO
+            int inCodigo = lstclsPosiblesClientes.size() + 1;
+            obclsPosiblesClientes.setInCodigo(inCodigo);
+            
+            //AGREGAMOS EL OBJETO A LA LISTA
+            lstclsPosiblesClientes.add(obclsPosiblesClientes);
+            //CREAMOS LA VARIABLE DE SESSION
+            session.setAttribute("session_lstclsPosiblesClientes", lstclsPosiblesClientes);
             
             //DEFINIR PARAMETROS DESDE EL CONTROLADOR
             request.setAttribute("stMensaje", "se realizo proceso con exito");
@@ -278,9 +295,4 @@ public class PosiblesClientesController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    private void btnGuardar(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
