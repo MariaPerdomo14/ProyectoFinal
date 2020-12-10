@@ -11,6 +11,8 @@ package Models;
  */
 public class clsPosiblesClientes {
     
+    
+    
     public String getStEmpresa() {
         return stEmpresa;
     }
@@ -84,11 +86,11 @@ public class clsPosiblesClientes {
     }
 
     public clsFuentePosibleCliente getObcclsFuentePosibleCliente() {
-        return obcclsFuentePosibleCliente;
+        return obclsFuentePosibleCliente;
     }
 
     public void setObcclsFuentePosibleCliente(clsFuentePosibleCliente obcclsFuentePosibleCliente) {
-        this.obcclsFuentePosibleCliente = obcclsFuentePosibleCliente;
+        this.obclsFuentePosibleCliente = obcclsFuentePosibleCliente;
     }
 
     public clsEstadoPosibleCliente getObclsEstadoPosibleCliente() {
@@ -182,7 +184,7 @@ public class clsPosiblesClientes {
     public String stFax;
     public String stMovil;
     public String stSitioWeb;
-    public clsFuentePosibleCliente obcclsFuentePosibleCliente;
+    public clsFuentePosibleCliente obclsFuentePosibleCliente;
     public clsEstadoPosibleCliente obclsEstadoPosibleCliente;
     public clsSector obclsSector;
     public int inCantidadEmpleados;
@@ -192,4 +194,6 @@ public class clsPosiblesClientes {
     public String stIDSkype;
     public String stTwitter;
     public String stCorreoElecronicoSecundario;
+
+   
 }
